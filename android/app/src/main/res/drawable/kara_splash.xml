@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Kara background -->
+    <item android:drawable="@color/kara_background" />
+
+    <!-- Kara logo -->
+    <item>
+        <bitmap
+            android:gravity="center"
+            android:src="@drawable/kara_logo" />
+    </item>
+
+</layer-list>
