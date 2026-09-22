@@ -51,7 +51,7 @@ const Dashboard = () => {
           </Text>
 
           <Text className="mt-1 text-[23px] font-bold text-[#24203F]">
-            Learn human body,{' '}
+            Learn the human body,{' '}
             <Text className="text-[#0072B2]">
               your way.
             </Text>

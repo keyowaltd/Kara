@@ -7,7 +7,10 @@ import {
 } from 'react-native';
 
 import karaLogo from '../../assets/kara-logo.png';
-import BeginDash from '../../screens/Learning/levels/Beginner/BeginnerDash'; 
+
+import BeginDash from '../../screens/Learning/levels/Beginner/BeginnerDash';
+import IntermediateDash from '../../screens/Learning/levels/Intermediate/IntDash';
+import PractDash from '../../screens/Learning/levels/Practiced/PracDash';
 
 // Change these filenames if your actual character assets have different names
 import beginnerIcon from '../../assets/BeginerIcon.png';
@@ -16,10 +19,21 @@ import practicedIcon from '../../assets/practiced.png';
 
 const ChooseLevel = () => {
   const [selectedLevel, setSelectedLevel] = useState(null);
+
   const [showBeginner, setShowBeginner] = useState(false);
+  const [showIntermediate, setShowIntermediate] = useState(false);
+  const [showPracticed, setShowPracticed] = useState(false);
 
   if (showBeginner) {
     return <BeginDash />;
+  }
+
+  if (showIntermediate) {
+    return <IntermediateDash />;
+  }
+
+  if (showPracticed) {
+    return <PractDash />;
   }
 
   const levels = [
@@ -142,6 +156,14 @@ const ChooseLevel = () => {
           onPress={() => {
             if (selectedLevel === 'beginner') {
               setShowBeginner(true);
+            }
+
+            if (selectedLevel === 'intermediate') {
+              setShowIntermediate(true);
+            }
+
+            if (selectedLevel === 'practiced') {
+              setShowPracticed(true);
             }
           }}
           activeOpacity={0.8}

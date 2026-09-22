@@ -7,15 +7,15 @@ import {
   ScrollView,
 } from 'react-native';
 
-import heartImage from '../../../../assets/Begheart.png';
+import heartImage from '../../../../assets/PracHeart.png';
 import Liver from '../../../../assets/Liver.png';
 import Kidneys from '../../../../assets/Kidney.png';
 import Brain from '../../../../assets/Brain.png';
 import Pancreas from '../../../../assets/Pancreas.png';
 import Stomach from '../../../../assets/Stomach.png';
 import Lungs from '../../../../assets/Lung.png';
-import BeginnerDash from './BeginnerDash';
-import HeartDash from './Heart';
+import BeginnerDash from './PracDash';
+import HeartDash from './PracDash';
 import Setting from '../../../../assets/Setting.png';
 import progress from '../../../../assets/progress.png';
 import learn from '../../../../assets/learn.png';
@@ -24,9 +24,10 @@ import home from '../../../../assets/home.png';
 
 import Topics from '../../../Topics/Topic';
 import Home from '../../../Dashboard/Dashboard';
-import OrganScreen from '../../levels/Beginner/OrganScreen';
+import OrganScreen from '../../levels/Intermediate/IntOrganScreen';
 import Settings from '../../../Progress/Settings';
 import Progress from '../../MyProgress';
+import KaraAI from '../../../AI/Ai';
 
 const Organ = () => {
   const [showBeginnerDash, setShowBeginnerDash] = useState(false);

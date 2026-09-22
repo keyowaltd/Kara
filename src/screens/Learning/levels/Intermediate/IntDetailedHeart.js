@@ -8,9 +8,9 @@ import {
   StatusBar,
 } from 'react-native';
 
-import HeartImage from '../../../../assets/Begheart.png';
+import HeartImage from '../../../../assets/InteHeart.png';
 import DropdownIon from '../../../../assets/DropdownIcon.png';
-import HeartPage from './Heart';
+import HeartPage from './IntHeart';
 import Quiz from '../../../Quiz/Quiz';
 
 const Heart = () => {

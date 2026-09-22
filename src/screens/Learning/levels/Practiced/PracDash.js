@@ -1,8 +1,17 @@
 import React, { useState } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  ScrollView,
+  Modal,
+  KeyboardAvoidingView,
+  Platform,
+} from 'react-native';
 
 // Images
-import heartImage from '../../../../assets/Begheart.png';
+import heartImage from '../../../../assets/PracHeart.png';
 import Point from '../../../../assets/BackIcon.png';
 import Organs from '../../../../assets/Organs.png';
 import Illness from '../../../../assets/Illness.png';
@@ -14,19 +23,21 @@ import topics from '../../../../assets/topics.png';
 import home from '../../../../assets/home.png';
 import ChooseLevel from '../../ChooseLevel';
 import Points from '../../../../assets/point.png';
-import Organ from './OrganScreen';
+import Organ from './PracHeart';
 import Quiz from '../../../Quiz/Quiz';
 
 import Topics from '../../../Topics/Topic';
 import Home from '../../../Dashboard/Dashboard';
-import OrganScreen from '../../levels/Beginner/OrganScreen';
+import OrganScreen from '../../levels/Practiced/PracOrganScreen';
 import Settings from '../../../Progress/Settings';
 import Progress from '../../MyProgress';
+import KaraAI from '../../../AI/Ai';
 
 const BeginnerDashboard = () => {
   const [showChooseLevel, setShowChooseLevel] = useState(false);
   const [showOrgan, setShowOrgan] = useState(false);
   const [showQuiz, setShowQuiz] = useState(false);
+  const [showKaraAI, setShowKaraAI] = useState(false);
 
   // Bottom navigation states
   const [showHome, setShowHome] = useState(false);
@@ -101,10 +112,10 @@ const BeginnerDashboard = () => {
           {/* Level + Notification */}
           <View className="flex-row items-center">
 
-            {/* Beginner Badge */}
+            {/* Practiced Badge */}
             <View className="mr-3 h-[36px] items-center justify-center rounded-full bg-[#00A878] px-4">
               <Text className="text-[13px] font-semibold text-white">
-                🌱 Beginner
+                🌱 Practiced
               </Text>
             </View>
 
@@ -282,9 +293,9 @@ const BeginnerDashboard = () => {
         {/* ===================================================== */}
 
         <TouchableOpacity
-          disabled={true}
           activeOpacity={0.8}
-          className="mt-10 h-[47px] w-[173px] self-center items-center justify-center rounded-xl bg-[#D9F4EF]"
+          onPress={() => setShowKaraAI(true)}
+          className="mt-10 h-[47px] w-[173px] self-center items-center justify-center rounded-xl bg-[#00A878]"
         >
           <Text className="text-[15px] font-bold text-white">
             Ask Kara AI
@@ -292,6 +303,35 @@ const BeginnerDashboard = () => {
         </TouchableOpacity>
 
       </ScrollView>
+
+      {/* ===================================================== */}
+      {/* KARA AI MODAL */}
+      {/* ===================================================== */}
+
+      <Modal
+        visible={showKaraAI}
+        animationType="slide"
+        transparent={true}
+        onRequestClose={() => setShowKaraAI(false)}
+      >
+        <KeyboardAvoidingView
+          style={{ flex: 1 }}
+          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+          keyboardVerticalOffset={0}
+        >
+          <View className="flex-1 justify-end bg-black/40">
+
+            <View className="h-[85%] w-full overflow-hidden rounded-t-[28px] bg-white">
+
+              <KaraAI
+                onClose={() => setShowKaraAI(false)}
+              />
+
+            </View>
+
+          </View>
+        </KeyboardAvoidingView>
+      </Modal>
 
       {/* ===================================================== */}
       {/* BOTTOM NAVIGATION */}

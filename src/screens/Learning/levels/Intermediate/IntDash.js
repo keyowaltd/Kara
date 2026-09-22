@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
 
 // Images
-import heartImage from '../../../../assets/Begheart.png';
+import heartImage from '../../../../assets/InteHeart.png';
 import Point from '../../../../assets/BackIcon.png';
 import Organs from '../../../../assets/Organs.png';
 import Illness from '../../../../assets/Illness.png';
@@ -14,14 +14,15 @@ import topics from '../../../../assets/topics.png';
 import home from '../../../../assets/home.png';
 import ChooseLevel from '../../ChooseLevel';
 import Points from '../../../../assets/point.png';
-import Organ from './OrganScreen';
+import Organ from './IntOrganScreen';
 import Quiz from '../../../Quiz/Quiz';
 
 import Topics from '../../../Topics/Topic';
 import Home from '../../../Dashboard/Dashboard';
-import OrganScreen from '../../levels/Beginner/OrganScreen';
+import OrganScreen from '../../levels/Intermediate/IntOrganScreen';
 import Settings from '../../../Progress/Settings';
 import Progress from '../../MyProgress';
+import KaraAI from '../../../AI/Ai';
 
 const BeginnerDashboard = () => {
   const [showChooseLevel, setShowChooseLevel] = useState(false);
@@ -104,7 +105,7 @@ const BeginnerDashboard = () => {
             {/* Beginner Badge */}
             <View className="mr-3 h-[36px] items-center justify-center rounded-full bg-[#00A878] px-4">
               <Text className="text-[13px] font-semibold text-white">
-                🌱 Beginner
+                🌱 Intermediate
               </Text>
             </View>
 
@@ -284,7 +285,7 @@ const BeginnerDashboard = () => {
         <TouchableOpacity
           disabled={true}
           activeOpacity={0.8}
-          className="mt-10 h-[47px] w-[173px] self-center items-center justify-center rounded-xl bg-[#D9F4EF]"
+          className="mt-10 h-[47px] w-[173px] self-center items-center justify-center rounded-xl bg-[#00A878]"
         >
           <Text className="text-[15px] font-bold text-white">
             Ask Kara AI

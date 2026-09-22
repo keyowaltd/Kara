@@ -7,11 +7,12 @@ import {
   ScrollView,
 } from 'react-native';
 
-import heartImage from '../../../../assets/Begheart.png';
-import LearnHeart from './DetailedHeart';
-import SelectOrgan from './OrganScreen';
-import Dissect from './Dissect';
+import heartImage from '../../../../assets/InteHeart.png';
+import LearnHeart from './IntDetailedHeart';
+import SelectOrgan from './IntOrganScreen';
+import Dissect from './IntDissect';
 import Quiz from '../../../Quiz/Quiz';
+import KaraAI from '../../../AI/Ai';
 
 const Heart = () => {
   const [showLearnHeart, setShowLearnHeart] = useState(false);
@@ -221,7 +222,7 @@ const Heart = () => {
         <TouchableOpacity
           disabled={true}
           activeOpacity={0.8}
-          className="mt-20 h-[47px] w-[173px] self-center items-center justify-center rounded-xl bg-[#D9F4EF]"
+          className="mt-20 h-[47px] w-[173px] self-center items-center justify-center rounded-xl bg-[#00A878]"
         >
           <Text className="text-[15px] font-bold text-white">
             Ask Kara AI
